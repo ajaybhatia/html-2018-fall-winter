@@ -1,0 +1,29 @@
+<!--
+  Write a JavaScript code to print your name with each letter in diferent size and color.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Practical 7</title>
+  <style>
+    .red { color: red; font-size: 5rem; }
+    .blue { color: blue; font-size: 7rem; }
+    .orange { color: orange; font-size: 6rem; }
+    .green { color: green; font-size: 8rem; }
+  </style>
+</head>
+<body>
+  <h1 id="name">Ajay Bhatia</h1>
+
+  <script>
+    let name = document.querySelector("#name");
+    const colors = ["red", "blue", "green", "orange"];
+
+    name.innerHTML = name.innerHTML.split('').map(c => {
+        return `<span class="${colors[Math.floor(Math.random() * colors.length)]}">${c}</span>`
+    }).join('');
+  </script>
+</body>
+</html>
