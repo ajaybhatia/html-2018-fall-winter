@@ -1,0 +1,40 @@
+<!--
+  Print 10 names with a line break between each name. The list should be alphabetized,
+  and to do this place a subscripted number next to each name based on where it will go
+  with in the alphabetized list. (Example: Alan1). Print first, the unalphabetized list with a
+  subscript number next to each name, then the alphabetized list. Both lists should have
+  an <h1> level heading
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Practical 4</title>
+</head>
+<body>
+
+<h1>Random List</h1>
+<ul id="random-list"></ul>
+
+<h1>Sorted List</h1>
+<ul id="sorted-list"></ul>
+
+<script>
+  const names = [
+    "Rihana", "Cowdy", "Bob", "Alan", "Cindy", "Pop", "Nathasa",
+    "Rihana", "Luke", "Abraham", "Kirk", "Sandy"
+  ];
+
+  names.forEach((name, index) => {
+    document.querySelector('#random-list').innerHTML += `<li>${name}<sub>${index+1}</sub></li>`;
+  });
+
+  names.sort();
+
+  names.forEach((name, index) => {
+    document.querySelector('#sorted-list').innerHTML += `<li>${name}<sub>${index+1}</sub></li>`;
+  });
+</script>
+</body>
+</html>
